@@ -11,7 +11,7 @@ const HomePage = () => {
 
   return (
     <MainTemplate>
-       <Movies items={popular.data}/>
+       <Movies title="Najpopularniejsze" items={popular.data}/>
     </MainTemplate>
   );
 };
