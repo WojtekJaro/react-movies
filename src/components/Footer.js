@@ -125,3 +125,14 @@ export default function LargeWithLogoLeft() {
   )
 }
 
+import React from 'react'
+
+const Footer = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default Footer
