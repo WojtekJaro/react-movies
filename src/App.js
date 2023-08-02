@@ -6,6 +6,7 @@ import MoviePage from "./pages/MoviePage"
 import PrivacyPage from "./pages/PrivacyPage"
 
 
+
 const App = () => {
   return (
     
@@ -16,7 +17,11 @@ const App = () => {
         <Route path="/movie" element={<MoviePage/>}/>
         <Route path="/privacy" element={<PrivacyPage/>} /> 
       </Routes>
+      
     </BrowserRouter>
+  
+    
+    
   )
 }
 
