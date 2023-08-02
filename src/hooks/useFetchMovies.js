@@ -19,7 +19,7 @@ const useFetchMovies = (query) => {
 
         try {
             const response = await axios.get(`https://api.themoviedb.org/3/movie/${query}?api_key=${KEY}`);
-            setData(response.data.results.slice(0,10))
+            setData(response.data.results)
         } catch (error) {
             console.log(error)
             setError("Wystąpił błąd")
