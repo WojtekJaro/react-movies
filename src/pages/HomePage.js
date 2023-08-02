@@ -1,15 +1,14 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from "../components/Footer"
+import MainTemplate from '../templates/MainTemplate'
 
 
 const HomePage = () => {
   return (
-    <div>
-
-        <Header/>
-        <Footer></Footer>
-     </div>
+    <MainTemplate>
+      <h1>Homepage</h1>     
+    </MainTemplate>
   )
 }
 

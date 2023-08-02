@@ -1,8 +1,11 @@
 import React from 'react'
+import MainTemplate from '../templates/MainTemplate'
 
 const ActorPage = () => {
   return (
-    <div>ActorPage</div>
+    <MainTemplate>
+      <h1>Actor</h1>
+    </MainTemplate>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import MainTemplate from '../templates/MainTemplate'
 
 const PrivacyPage = () => {
   return (
-    <div>PrivacyPage</div>
+    <MainTemplate>
+        <h1>Prywatnosc</h1>
+    </MainTemplate>
   )
 }
 

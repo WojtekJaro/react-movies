@@ -22,7 +22,7 @@ import {
 } from "@chakra-ui/icons";
 import Logo from "./Logo";
 
-export default function WithSubnavigation() {
+export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
