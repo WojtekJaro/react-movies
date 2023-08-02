@@ -12,7 +12,18 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 
-const Movies = ({ items, title }) => {
+const Movies = ({ items, title,autoplay }) => {
+
+  let autoplayProps = {
+    autoplay: {
+        delay: 1500,
+    }
+  }
+  if(!autoplay) {
+    autoplayProps = null
+  }
+
+
   return (
     <Box my={5} maxW={"8xl"} mx="auto" px={{ base: 4 }}>
       <Heading mb={4} mt={5} as="h2" size="lg" noOfLines={1}>
@@ -24,9 +35,7 @@ const Movies = ({ items, title }) => {
           slidesPerView={1.5}
           spaceBetween={15}
           loop={true}
-          autoplay={{
-            delay: 1500,
-          }}
+          {...autoplayProps}
           speed={1500}
           modules={[Autoplay]}
           breakpoints={{

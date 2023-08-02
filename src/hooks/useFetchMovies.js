@@ -2,7 +2,7 @@ import { useToast } from "@chakra-ui/react";
 import axios from "axios"
 import { useEffect, useState } from "react";
 
-const KEY = "bb73a88521ab379e017b9a1df971b994"
+//const KEY = "bb73a88521ab379e017b9a1df971b994"
 
 const useFetchMovies = (query) => {
     const [data, setData] = useState([]);
@@ -18,7 +18,7 @@ const useFetchMovies = (query) => {
     const getData = async () => {
 
         try {
-            const response = await axios.get(`https://api.themoviedb.org/3/movie/${query}?api_key=${KEY}`);
+            const response = await axios.get(`https://api.themoviedb.org/3/movie/${query}?api_key=${process.env.REACT_APP_API_KEY}`);
             setData(response.data.results)
         } catch (error) {
             console.log(error)
