@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 
 import {
   Box,
+  Button,
   Container,
   SimpleGrid,
   Stack,
@@ -35,8 +36,8 @@ const ListHeader = ({ children }) => {
 export default function LargeWithLogoLeft() {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
+      bg={useColorModeValue('blue.900')}
+      color={useColorModeValue('whiteAlpha.900')}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
@@ -45,79 +46,72 @@ export default function LargeWithLogoLeft() {
             <Box>
               <Logo color={useColorModeValue('gray.700', 'white')} />
             </Box>
+            
             <Text fontSize={'sm'}>© 2022 Chakra Templates. All rights reserved</Text>
+            <Button colorScheme='gray'color="blue.700"  size='md'>Cześć Uzytkowniku!</Button>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Product</ListHeader>
+            <ListHeader>PODSTAWY</ListHeader>
             <Box as="a" href={'#'}>
-              Overview
+              O TMDB
             </Box>
             <Box as="a" href={'#'}>
-              Features
+              Skontaktuj się z nami
             </Box>
             <Box as="a" href={'#'}>
-              Tutorials
+              Fora pomocy tech.
             </Box>
             <Box as="a" href={'#'}>
-              Pricing
+              API
             </Box>
             <Box as="a" href={'#'}>
-              Releases
-            </Box>
-          </Stack>
-          <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
-            <Box as="a" href={'#'}>
-              About
-            </Box>
-            <Box as="a" href={'#'}>
-              Press
-            </Box>
-            <Box as="a" href={'#'}>
-              Careers
-            </Box>
-            <Box as="a" href={'#'}>
-              Contact
-            </Box>
-            <Box as="a" href={'#'}>
-              Partners
+              System Status
             </Box>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Support</ListHeader>
+            <ListHeader>ZAANGAŻUJ SIĘ</ListHeader>
             <Box as="a" href={'#'}>
-              Help Center
+              Biblia Współtwórców
             </Box>
             <Box as="a" href={'#'}>
-              Terms of Service
+              Dodaj nowy film
             </Box>
             <Box as="a" href={'#'}>
-              Legal
+              Dodaj nowy serial
             </Box>
-            <Box as="a" href={'#'}>
-              Privacy Policy
-            </Box>
-            <Box as="a" href={'#'}>
-              Status
-            </Box>
+            
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Follow Us</ListHeader>
+            <ListHeader>SPOŁECZNOŚĆ</ListHeader>
             <Box as="a" href={'#'}>
-              Facebook
+              Wytyczne
+            </Box>
+            <Box as="a" href={'#'}>
+              Dyskusje
+            </Box>
+            <Box as="a" href={'#'}>
+              Ranking
             </Box>
             <Box as="a" href={'#'}>
               Twitter
             </Box>
+          
+          </Stack>
+          <Stack align={'flex-start'}>
+            <ListHeader>PRAWNE</ListHeader>
             <Box as="a" href={'#'}>
-              Dribbble
+              Regulamin
             </Box>
             <Box as="a" href={'#'}>
-              Instagram
+              Warunki użytkowania interfejsu API
             </Box>
             <Box as="a" href={'#'}>
-              LinkedIn
+              Polityka prywatności
             </Box>
+            <Box as="a" href={'#'}>
+              Wniosek DMCA Takedown
+            </Box>
+            
           </Stack>
         </SimpleGrid>
       </Container>
