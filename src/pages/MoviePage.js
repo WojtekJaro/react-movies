@@ -7,7 +7,7 @@ import axios from 'axios'
 const MoviePage = () => {
 	const params = useParams()
 	const itemid = params.url.replace(/\D/g, '')
-	const [movie, setMovie] = useState()
+	const [movie, setMovie] = useState({})
 
 	useEffect(()=>{
       getMovie()
@@ -22,12 +22,14 @@ const MoviePage = () => {
 			console.log(error)
 		}
 	}
-
-	console.log(movie)
+if (!movie) {
+	return
+}
+console.log(movie)
   
 	return (
 		<MainTemplate>
-			<h1>Movie</h1>
+			<h1>test{movie.id}</h1>
 		</MainTemplate>
 	)
 }
