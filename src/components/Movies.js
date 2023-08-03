@@ -30,7 +30,7 @@ const Movies = ({ items, title,autoplay }) => {
         {title}
       </Heading>
 
-      <Box position="relative">
+      <Box position="relative" zIndex="0">
         <Swiper
           slidesPerView={1.5}
           spaceBetween={15}
