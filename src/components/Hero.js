@@ -8,7 +8,7 @@ import {
 	InputRightElement,
     InputGroup,
 } from '@chakra-ui/react'
-import heroImage from '../assets/actors2.jpg'
+import heroImage from '../assets/actors1.jpg'
 
 const Hero = () => {
 	return (
@@ -17,7 +17,6 @@ const Hero = () => {
 			maxW={'8xl'}
 			minH={'400px'}
 			mx='auto'
-			bg='red'
 			px={{ base: 4 }}
 			backgroundImage={`url(${heroImage})`}>
             
@@ -31,7 +30,7 @@ const Hero = () => {
 				<InputGroup size='md' >
 					<Input pr='4.5rem' bg="white" placeholder='Szukaj filmu, serialu, osoby...' borderRadius={"30px"}/>
 					<InputRightElement width='4.5rem'>
-						<Button bg="green.300" m={1} height="80%" fontSize="14px" color="white" borderRadius={"30px"}>Szukaj
+						<Button bg="gray.800" m={1} height="80%" fontSize="14px" color="white" borderRadius={"30px"}>Szukaj
 						</Button>
 					</InputRightElement>
 				</InputGroup>

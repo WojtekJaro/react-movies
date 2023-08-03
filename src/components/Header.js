@@ -21,6 +21,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -33,12 +34,12 @@ export default function Header() {
       borderBottom={1}
       borderStyle={"solid"}
 	  zIndex={1000}
-      bg="green.400"
-      borderColor={useColorModeValue("green.500", "gray.900")}
+      bg="gray.700"
+      borderColor={useColorModeValue("gray.900", "gray.900")}
     >
       <Flex
-        bg={useColorModeValue("green.400", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={useColorModeValue("gray.700", "gray.800")}
+        color={useColorModeValue("white", "white")}
         minH={"60px"}
         maxW={"8xl"}
         justifyContent="center"
@@ -55,7 +56,7 @@ export default function Header() {
           <IconButton
             onClick={onToggle}
             icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon color="white" w={5} h={5} />
             }
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
@@ -82,21 +83,21 @@ export default function Header() {
             href={"#"}
             color={"white"}
           >
-            Sign In
+            Zaloguj
           </Button>
           <Button
             as={"a"}
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
-            color={"white"}
-            bg={"green.400"}
+            color={"black"}
+            bg={"white"}
             href={"#"}
             _hover={{
-              bg: "green.300",
+              bg: "gray.200",
             }}
           >
-            Sign Up
+            Zarejestruj
           </Button>
         </Stack>
       </Flex>
@@ -109,8 +110,8 @@ export default function Header() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const linkColor = useColorModeValue("white", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.400", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
@@ -120,9 +121,7 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Box
-                as="a"
-                p={2}
-                href={navItem.href ?? "#"}
+                p={2}          
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -131,7 +130,10 @@ const DesktopNav = () => {
                   color: linkHoverColor,
                 }}
               >
+                <Link to={navItem.href}>
                 {navItem.label}
+                </Link>
+              
               </Box>
             </PopoverTrigger>
 
@@ -217,20 +219,21 @@ const MobileNavItem = ({ label, children, href }) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Box
         py={2}
-        as="a"
-        href={href ?? "#"}
+
         justifyContent="space-between"
         alignItems="center"
         _hover={{
           textDecoration: "none",
         }}
       >
+        <Link to={href}>
         <Text
           fontWeight={600}
           color={useColorModeValue("gray.600", "gray.200")}
         >
           {label}
         </Text>
+        </Link>
         {children && (
           <Icon
             as={ChevronDownIcon}
@@ -271,13 +274,5 @@ const NAV_ITEMS = [
   {
     label: "Aktorzy",
     href: "/actor",
-  },
-  {
-    label: "Learn Design",
-    href: "#",
-  },
-  {
-    label: "Hire Designers",
-    href: "#",
-  },
+  }
 ];

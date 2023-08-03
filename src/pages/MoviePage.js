@@ -30,11 +30,8 @@ const MoviePage = () => {
   }, []);
 
   const handleGetColors = (clr) => {
-	console.log(clr)
    setColors(clr.map((c) => c.join(", ")))
   }
-
-  console.log(colors)
 
   const getMovie = async () => {
     try {
@@ -49,14 +46,15 @@ const MoviePage = () => {
   if (!movie && colors.length === 0) {
     return;
   }
-  console.log(colors);
+
+  console.log(colors)
 
   return (
     <MainTemplate>
 
-         <ColorExtractor getColors={handleGetColors}>
+         <ColorExtractor rgb  getColors={handleGetColors}>
           <img
-            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             style={{ display:"none" }}
             alt=""
           />
@@ -65,7 +63,7 @@ const MoviePage = () => {
       <Box
 	  bgSize="cover"
 	    bgPosition="center"
-        bgImage={`linear-gradient(to right, rgb(${colors[0]}) calc((50vw - 170px) - 340px), rgb(${colors[1]}) 50%, rgb(${colors[0]}) 100%),url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`}
+        bgImage={`linear-gradient(to right, rgb(${colors[5]}) calc((50vw - 170px) - 340px), rgb(${colors[0]}) 100%),url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`}
         maxWidth={"100%"}
         my={5}
         py={{ base: 9 }}
@@ -103,7 +101,7 @@ const MoviePage = () => {
                 bg="gray.900"
                 borderRadius="50%"
                 value={movie.vote_average * 10}
-                color="green.400"
+                color="blue.400"
                 size="60px"
               >
                 <CircularProgressLabel

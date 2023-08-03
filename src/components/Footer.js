@@ -22,8 +22,9 @@ const ListHeader = ({ children }) => {
 export default function LargeWithLogoLeft() {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
+      mt="80px"
+      bg={useColorModeValue('gray.700', 'gray.900')}
+      color={useColorModeValue('white', 'gray.200')}>
       <Container as={Stack} maxW={'8xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}

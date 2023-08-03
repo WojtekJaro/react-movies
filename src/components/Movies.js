@@ -67,7 +67,7 @@ const Movies = ({ items, title,autoplay }) => {
                     bottom="50px"
                     left="10px"
                     value={item.vote_average * 10}
-                    color="green.400"
+                    color="blue.400"
                     size="40px"
                   >
                     <CircularProgressLabel
