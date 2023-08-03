@@ -7,6 +7,7 @@ import axios from "axios";
 import { AspectRatio } from "@chakra-ui/react";
 import Trailers from "../components/Trailers";
 
+
 const HomePage = () => {
   const popular = useFetchMovies("popular");
   const playing = useFetchMovies("now_playing");
