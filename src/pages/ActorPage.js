@@ -33,7 +33,7 @@ const ActorPage = () => {
       
       <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
 			{actor.map((item) => (
-        <Link to={`/actors/${item.name.replaceAll(" ", "-").toLowerCase()}-${item.name}`}>
+        <Link to={`/actors/${item.name.replaceAll(" ", "-").toLowerCase()}-${item.id}`}>
         <Card maxW='sm'>
 				<CardBody>
 					<Image borderRadius={15} src={`https://image.tmdb.org/t/p/w200/${item.profile_path}`} alt='Dan Abramov'/>

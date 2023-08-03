@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage"
 import ActorPage from "./pages/ActorPage"
 import MoviePage from "./pages/MoviePage"
 import PrivacyPage from "./pages/PrivacyPage"
+import ActorDetail from './pages/ActorDetail';
 
 
 
@@ -16,7 +17,7 @@ const App = () => {
         <Route path="/actor" element={<ActorPage/>} />
         <Route path="/movie/:url" element={<MoviePage/>}/>
         <Route path="/privacy" element={<PrivacyPage/>} /> 
-        <Route path="/actors/:name" element={<PrivacyPage/>} /> 
+        <Route path="/actors/:name" element={<ActorDetail/>} /> 
       </Routes>
       
     </BrowserRouter>
