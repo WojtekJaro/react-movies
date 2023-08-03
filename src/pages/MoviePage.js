@@ -14,16 +14,27 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import { ColorExtractor } from "react-color-extractor";
+
 
 const MoviePage = () => {
   const params = useParams();
   const itemid = params.url.replace(/\D/g, "");
   const [movie, setMovie] = useState();
+  const [colors, setColors] = useState([])
+
 
   useEffect(() => {
     getMovie();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const handleGetColors = (clr) => {
+	console.log(clr)
+   setColors(clr.map((c) => c.join(", ")))
+  }
+
+  console.log(colors)
 
   const getMovie = async () => {
     try {
@@ -35,17 +46,26 @@ const MoviePage = () => {
       console.log(error);
     }
   };
-  if (!movie) {
+  if (!movie && colors.length === 0) {
     return;
   }
-  console.log(movie);
+  console.log(colors);
 
   return (
     <MainTemplate>
+
+         <ColorExtractor getColors={handleGetColors}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            style={{ display:"none" }}
+            alt=""
+          />
+        </ColorExtractor>
+		
       <Box
 	  bgSize="cover"
 	    bgPosition="center"
-        bgImage={`linear-gradient(to right, rgb(0 0 0 / 80%) calc((50vw - 170px) - 340px), rgb(70 141 109 / 84%) 50%, rgb(50 95 32 / 20%) 100%),url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`}
+        bgImage={`linear-gradient(to right, rgb(${colors[0]}) calc((50vw - 170px) - 340px), rgb(${colors[1]}) 50%, rgb(${colors[0]}) 100%),url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`}
         maxWidth={"100%"}
         my={5}
         py={{ base: 9 }}
@@ -62,10 +82,12 @@ const MoviePage = () => {
             <Image
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               alt="Dan Abramov"
+			  borderRadius={8}
             />
           </GridItem>
 
           <GridItem colSpan={1}>
+
             <Heading>{movie.title}</Heading>
             <Text>
               {movie.release_date} ({movie.original_language.toUpperCase()})
