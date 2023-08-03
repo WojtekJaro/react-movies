@@ -46,8 +46,9 @@ const HomePage = () => {
       <Hero />
       <Movies autoplay title="Najpopularniejsze" items={popular.data} />
       <Movies title="Teraz grane" items={playing.data} />
-      <Movies title="Nadchodzące" items={upcoming.data} />
       <Trailers items={trailers}/>
+      <Movies title="Nadchodzące" items={upcoming.data} />
+  
 
     </MainTemplate>
   );
