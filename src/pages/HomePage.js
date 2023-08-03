@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import axios from "axios";
 import { AspectRatio } from "@chakra-ui/react";
 import Trailers from "../components/Trailers";
+import ActorPage from "./ActorPage";
 
 
 const HomePage = () => {
@@ -48,6 +49,7 @@ const HomePage = () => {
       <Movies title="Teraz grane" items={playing.data} />
       <Trailers items={trailers}/>
       <Movies title="Nadchodzące" items={upcoming.data} />
+      
   
 
     </MainTemplate>

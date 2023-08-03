@@ -32,13 +32,13 @@ const MoviePage = () => {
 
 	return (
 		<MainTemplate>
-			<Box my={5} maxW={"8xl"} mx="auto" px={{ base: 4 }}>
+			<Box bgImage = {`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`  }  my={5} maxW={"8xl"} mx="auto" px={{ base: 4 }}>
 			<Grid templateRows='repeat(1, 1fr)' templateColumns='repeat(5, 1fr)' gap={4}>
 				<GridItem rowSpan={2}>
 					<Image src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt='Dan Abramov' />
 				</GridItem>
 
-				<GridItem colSpan={2}>
+				<GridItem  colSpan={2}>
 					<Heading>{movie.title}</Heading>
 					<Text>{movie.release_date}</Text>
 					<Text>{movie.genres.map(item => item.name)}</Text>

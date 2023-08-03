@@ -16,6 +16,7 @@ const App = () => {
         <Route path="/actor" element={<ActorPage/>} />
         <Route path="/movie/:url" element={<MoviePage/>}/>
         <Route path="/privacy" element={<PrivacyPage/>} /> 
+        <Route path="/actors/:name" element={<PrivacyPage/>} /> 
       </Routes>
       
     </BrowserRouter>
