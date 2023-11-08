@@ -75,30 +75,8 @@ export default function Header() {
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-            color={"white"}
-          >
-            Zaloguj
-          </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"black"}
-            bg={"white"}
-            href={"#"}
-            _hover={{
-              bg: "gray.200",
-            }}
-          >
-            Zarejestruj
-          </Button>
+          
+        
         </Stack>
       </Flex>
 

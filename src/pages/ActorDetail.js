@@ -89,7 +89,7 @@ const ActorDetail = () => {
 								Ocena treści
 							</Text>
 
-							<Button></Button>
+							
 						</GridItem>
 						<GridItem colSpan={4}>
 							<Heading size='lg'>{details.name}</Heading>
