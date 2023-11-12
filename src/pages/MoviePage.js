@@ -14,7 +14,7 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import { ColorExtractor } from "react-color-extractor";
+
 
 
 const MoviePage = () => {
@@ -52,14 +52,14 @@ const MoviePage = () => {
   return (
     <MainTemplate>
 
-         <ColorExtractor rgb  getColors={handleGetColors}>
+         {/* <Image rgb  getColors={handleGetColors}>
           <img
             src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
             style={{ display:"none" }}
             alt=""
           />
-        </ColorExtractor>
-		
+        </Image>
+		 */}
       <Box
 	  bgSize="cover"
 	    bgPosition="center"
